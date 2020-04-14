@@ -1,0 +1,17 @@
+version: '3.7'
+services:
+  oracle-12c:
+    build: .
+    image: oracle:12c
+    container_name: oracle-12c
+    hostname: oracle-12c
+    restart: always
+    network_mode: host
+    environment: 
+      - WEB_CONSOLE=false
+      - DBCA_TOTAL_MEMORY=2048
+    ports:
+      - 8080:8080
+      - 1521:1521
+    volumes: 
+      - ${HOME}/oracle-12c/data:/u01/app/oracle
