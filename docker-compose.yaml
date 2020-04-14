@@ -6,9 +6,9 @@ services:
     container_name: oracle-12c
     hostname: oracle-12c
     restart: always
-    network_mode: host
+    network_mode: bridge
     environment: 
-      - WEB_CONSOLE=false
+      - WEB_CONSOLE=true
       - DBCA_TOTAL_MEMORY=2048
     ports:
       - 8080:8080
